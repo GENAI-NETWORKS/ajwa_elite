@@ -1,0 +1,175 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0.95rem 2.5rem;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+  font-family: var(--font-body);
+}
+
+.navbar--scrolled {
+  background: rgba(8, 11, 16, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.navbar__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* brand */
+.navbar__brand {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  transition: opacity 0.18s ease;
+}
+.navbar__brand:hover { opacity: 0.85; }
+.navbar__logo-img {
+  height: 44px;
+  width: auto;
+  border-radius: 4px;
+  object-fit: contain;
+}
+.navbar__brand-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin-left: 0.2rem;
+  color: var(--c-text-light);
+}
+.navbar__brand-sub {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  align-self: flex-end;
+  margin-bottom: 2px;
+}
+
+/* nav */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+.navbar__link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--c-text-muted);
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--r-full);
+  transition: color 0.18s ease, background 0.18s ease;
+}
+.navbar__link:hover {
+  color: var(--c-text-light);
+  background: rgba(255,255,255,0.07);
+}
+
+/* actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: auto;
+}
+
+.navbar__cta {
+  font-size: 0.78rem;
+  padding: 0.52rem 1.1rem;
+}
+
+/* hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1000;
+  position: relative;
+}
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.navbar__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger--open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* mobile drawer */
+.navbar__drawer {
+  position: fixed;
+  top: 0; right: 0; left: auto;
+  height: 100vh;
+  width: 50%;
+  max-width: 320px;
+  min-width: 220px;
+  background: rgba(8,11,16,0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(255,255,255,0.07);
+  box-shadow: -10px 0 40px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 5.5rem 1.5rem 1.6rem; /* Top padding to clear hamburger */
+  animation: slideInRight 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 999;
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.navbar__drawer-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(240,242,245,0.8);
+  text-decoration: none;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.15s ease;
+}
+.navbar__drawer-link:hover { color: var(--c-gold-400); }
+
+.navbar__drawer-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.navbar__drawer-ctas .btn {
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .navbar { padding: 0.95rem 1.5rem; }
+  .navbar__nav  { display: none; }
+  .navbar__cta--consult { display: none; }
+  .navbar__cta--diet    { display: none; }
+  .navbar__hamburger    { display: flex; }
+}

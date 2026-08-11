@@ -1,0 +1,22 @@
+{
+  "name": "ajwa-elite",
+  "version": "1.0.0",
+  "description": "Ajwa Elite – Personalized Nutrition Delivered",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "lucide-react": "^1.31.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.18.2",
+    "vite": "^8.0.9"
+  }
+}

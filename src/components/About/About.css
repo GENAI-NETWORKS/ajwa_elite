@@ -1,0 +1,161 @@
+.about {
+  background: #f8f9fc;
+}
+
+.about__title { margin-top: 0.5rem; }
+.about__accent {
+  background: linear-gradient(135deg, var(--c-sage), var(--c-gold-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Bento Grid ── */
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  align-items: start;
+}
+
+.about__card {
+  background: #ffffff;
+  border-radius: var(--r-xl);
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  padding: 2.5rem;
+  transition: transform 0.4s var(--t-smooth), box-shadow 0.4s ease;
+}
+.about__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+}
+
+/* 1. Mission Statement */
+.about__mission {
+  grid-column: span 12;
+  padding: 2.2rem 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff, #f4f6fa);
+}
+.about__mission-statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--c-text-dark);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.about__mission-highlight {
+  color: var(--c-sage);
+}
+
+/* 2. Credentials */
+.about__credentials-container {
+  grid-column: span 7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.about__credential-card {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.about__credential-icon {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(244,192,82,0.12);
+  color: var(--c-gold-500);
+  border-radius: var(--r-md);
+  flex-shrink: 0;
+}
+.about__credential-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--c-text-body);
+  line-height: 1.4;
+}
+
+/* 3. Philosophy */
+.about__philosophy {
+  grid-column: span 5;
+  background: var(--c-dark-900);
+  color: var(--c-text-light);
+}
+.about__philosophy-icon {
+  color: var(--c-sage);
+  margin-bottom: 1.2rem;
+}
+.about__philosophy-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+.about__philosophy-text {
+  font-size: 0.95rem;
+  color: var(--c-text-muted);
+  line-height: 1.7;
+}
+
+/* 4. Trust Strip */
+.about__trust-container {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.about__trust-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem 1.8rem;
+}
+.about__trust-icon {
+  width: 60px; height: 60px;
+  background: rgba(122,170,106,0.1);
+  color: var(--c-sage);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.about__trust-stats {
+  display: flex;
+  flex-direction: column;
+}
+.about__trust-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--c-text-dark);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.2rem;
+}
+.about__trust-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-text-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about__credentials-container,
+  .about__philosophy {
+    grid-column: span 12;
+  }
+}
+@media (max-width: 768px) {
+  .about__trust-container {
+    grid-template-columns: 1fr;
+  }
+  .about__credentials-container {
+    grid-template-columns: 1fr;
+  }
+  .about__mission { padding: 2.5rem 1.5rem; }
+}
