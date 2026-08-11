@@ -82,6 +82,9 @@ export default function Footer() {
       <div className="footer__bottom">
         <p className="footer__copy">
           © {year} Ajwa Elite Nutrition Salem, Tamil Nadu, India.
+          <span style={{ display: 'block', marginTop: '0.4rem', opacity: 0.85, fontSize: '0.85em' }}>
+            Powered by <a href="https://genaitechnology.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--c-gold-400)', textDecoration: 'none', fontWeight: '600' }}>Gen-AI Tech | IT Solutions Salem</a>
+          </span>
         </p>
         <div className="footer__bottom-links">
           <a href="#">Privacy Policy</a>
